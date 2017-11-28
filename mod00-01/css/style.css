@@ -14,13 +14,12 @@ p {
 h1,
 h2,
 .bio {
-	color: #ff0066;
+	color: #e6005c;
 
 }
 
 h1 {
-	font-size: 50px;
-	font-weight: normal;
+	font-size: 50px;	font-weight: normal;
 	margin-bottom: 0;
 }
 
@@ -30,7 +29,7 @@ h2 {
 }
 
 .bio {
-	font-size: 14px; /* default font-size = 16px */
+	font-size: 16px; /* default font-size = 16px */
 }
 
 .me {
