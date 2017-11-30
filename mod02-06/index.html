@@ -1,32 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
-	<style type="text/css">
-		
-		rect:hover {
-			opacity: 0.5;
-		}
-	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	
+	<title>DOM Activity 3</title>
+	
+	<!-- imports google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- imports custom stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
-"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-width="300" height="80">
+	<!-- css prep course -->
+	<div class="wrapper">
 
-  <text x="10" y="35">Two passive squares:</text>
+		<header>
+			<h1>City Blog</h1>
+		</header>	
 
-  <rect id="rect1"  x="160" y="10" 
-   width="60" height="60" fill="blue"
-   onmousedown="evt.target.setAttribute('y', '5');"
-   onmouseup="evt.target.setAttribute('y', '10');"/>
+		<main>
+			<!-- dashboard -->
+			<section id="mainDashboard">
+				<div class="dashColumns">
+					<h3><i class="fa fa-home" aria-hidden="true"></i> Dashboard</h3>
+				</div>	
+				<!-- posts -->
+				<div class="dashColumns">
+					<div id="postCircle">
+						<i class="fa fa-file-text-o fa-lg"></i>
+					</div>
+					
+					<div class="inline-blocked">
+						<p>5</p>
+						<p>posts</p>
+					</div>
+						
+				</div>
 
-  <rect id="rect2" x="230" y="10"
-   width="60" height="60" fill="green"/>
+				<!-- images -->
+				<div class="dashColumns">
+					<div id="imageCircle"
+						><i class="fa fa-picture-o fa-lg"></i>
+					</div>
+					<div class="inline-blocked">
+						<p>13</p>
+						<p>images</p>
+					</div>
+				</div>
+			</section>
 
-</svg>
+			<!-- new post -->
+			<section>
+				<h3><i class="fa fa-plus-circle" aria-hidden="true"></i> New Post</h3>
+
+				<form method="" action="">
+					<input id="postTitle" type="" name="" placeholder="Enter your post title">
+					<textarea id="postContent" placeholder="Enter your content"></textarea>
+					<input type="submit" name="" id="btnPusblish" class="btn btn-blue" value="Publish">
+				</form>
+			</section>
+
+			<!-- upload image -->
+			<section>
+				<h3><i class="fa fa-cloud-upload" aria-hidden="true"></i> Upload Image</h3>
+
+				<div class="img-set-holder">
+					<img class="img-set" src="http://lorempixel.com/200/200/" alt="">
+					<img class="img-set" src="http://lorempixel.com/200/200/" alt="">
+					<img class="img-set" src="http://lorempixel.com/200/200/" alt="">
+					<img class="img-set" src="http://lorempixel.com/200/200/" alt="">
+					<img class="img-set" src="http://lorempixel.com/200/200/" alt="">
+				</div>
+
+				<form method="" action="">
+					<button class="btn btn-green" type="button"><i class="fa fa-upload" aria-hidden="true"></i>Upload</button>
+
+					<button class="btn btn-blue" type="button"><i class="fa fa-file-image-o" aria-hidden="true"></i>Browse</button>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<span>Tuitt Coding Bootcamp &copy; 2017</span>
+		</footer>
+	</div>
+
+	<script src="https://use.fontawesome.com/26089d033c.js"></script>
+
 </body>
 </html>
