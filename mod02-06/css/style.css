@@ -17,13 +17,12 @@
 }
 
 .wrapper{
-	width: 700px;
+	width: 600px;
 	margin: 0 auto;
-	background-color: lightgrey;
-}
-
-body{
-	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 header{
@@ -34,6 +33,7 @@ header{
 	text-align: center;
 	font-size: 10px;
 	text-transform: uppercase;
+	border-radius: 5px 5px 0 0;
 }
 
 footer{
@@ -43,6 +43,7 @@ footer{
 	color: white;
 	text-align: center;
 	font-size: 14px;
+	border-radius: 0 0 5px 5px;
 }
 
 form{
@@ -53,6 +54,8 @@ form{
 main{
 	background: url("../img/city.jpg");
 	background-size: 100% 100%;
+	opacity: 0.6;
+	filter: alpha(opacity=60)
 	padding: 20px 10px 10px;
 	/*background: linear-gradient(#eeeeee, #dddddf);*/
 	/*background: linear-gradient(#dde2e3, #9aacb8);*/
