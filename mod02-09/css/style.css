@@ -127,13 +127,16 @@ main.wrapper > p {
     line-height: 100px;
  	height: 100px;
  	background-color: #323339; /* Blue */
-    color: aliceblue;
+    color: black;
     text-align: center;
-    font-size: 40px;
-    font-family: 'Gloria Hallelujah', cursive;
-    text-decoration: none;
+    font-size: 80px;
+    font-family: 'Anton', sans-serif;
 /*     position: fixed; */
  }
+
+#bh-menu{
+    text-decoration: none;
+}
 
  .sidebar{
  	height: 300px;
