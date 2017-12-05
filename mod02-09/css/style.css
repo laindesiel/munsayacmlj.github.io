@@ -1,0 +1,311 @@
+/*CSS Reset*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	/* To avoid overflow */
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-image: url(../img/bh.jpg);
+}
+
+.wrapper{
+	width: 80%;
+	margin: 0 auto; /* To center the wrapper */
+	background-color: #fff;
+
+}
+
+/*
+div{
+	padding: 20px;
+}
+*/
+
+.grandparent{
+	background-color: skyblue;
+	width: inherit; /*Refers to parent container's width*/
+	position: fixed;
+	bottom: 0;
+}
+
+.parent{
+	background-color: pink;
+	/*width: 100%;*/
+	position: relative;
+}
+
+/*p{
+	position: static;
+	margin-left: 50px;
+	margin-top: -20px;
+
+}
+*/
+input[name="submit"] {
+	margin-left: 20px;
+}
+
+strong{
+	background-color: yellow;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	/*left: 100px;*/
+	/*top: 100px;*/
+	/*right: -100px;*/
+	/*bottom: -100px;*/
+
+}
+
+h1{
+	background-color: grey;
+	padding: 10px;
+	position: fixed;
+	z-index: 1;
+	width: inherit;
+}
+
+main.wrapper > p {
+	height: 1000px;
+	background-color: #efefef;
+	position: relative;
+	top: 57px;
+}
+
+
+/*
+ *
+ * Page 3 CSS Rules
+ *
+ */
+
+
+ .blue{
+ 	background-color: blue;
+ 	top: 20px;
+ 	left: 20px;
+ 	z-index: 1;
+ }
+
+ .yellow{
+ 	background-color: yellow;
+ 	top: 40px;
+ 	left: 40px;
+ 	/*z-index: 1;*/
+ }
+
+ .orange{
+ 	background-color: orange;
+ 	top: 60px;
+ 	left: 60px;
+ 	z-index: 2;
+ }
+
+
+/*
+ *
+ * Page 4 CSS Rules
+ *
+ */
+
+
+ .menu{
+    line-height: 100px;
+ 	height: 100px;
+ 	background-color: #323339; /* Blue */
+    color: black;
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Anton', sans-serif;
+/*     position: fixed; */
+ }
+
+#bh-menu{
+    text-decoration: none;
+}
+
+ .sidebar{
+ 	height: 300px;
+ 	background-color: rgba(179, 124, 87, 0.3); /* Red */
+ 	width: 20%;
+ 	margin: 0 auto;
+ 	float: left; /* Possible values: right, none, left*/
+ }
+
+.side-class{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.side-class:hover{
+    width: 200px;
+    background-color: #3f3931;
+    color: white;
+}
+
+.sidebar > a:link,.sidebar > a:active,.sidebar > a:visited,.sidebar > a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+/*
+*
+* Content
+*
+*/
+
+
+ .content{
+/* 	height: 500px;*/
+ 	background-color: rgba(179, 124, 87, 0.5); /* Peach */
+ 	width: 80%;
+ 	float: left;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0 0 10px 10px;
+ }
+
+.article-image{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: width 1s, height 2s;
+}
+
+div.content > p {
+    margin-bottom: 10px;
+}
+
+/*
+.article-image:hover{
+    width: 500px;
+    height: 500px;
+}
+*/
+
+/*
+*
+* Footer
+*
+*/
+
+
+
+.footer{
+/*	height: 200px;*/
+	background-color: lightgray; /* Light Blue */
+	clear: both; /* Will offset floating effects */
+}
+
+.avatar{
+    width: 60px;
+    height: 60px;
+    background-color: #d639fe;
+    float: left;
+    margin-right: 25px;
+    border-radius: 50%;
+/*    background-image: url('http://lorempixel.com/60/60/');*/
+}
+
+.username{
+    margin-bottom: 15px;
+}
+
+h3.username + p{
+    overflow: hidden;
+}
+
+.page{
+/*	border: 1px solid red;*/
+	/*height: 500px;*/
+    background-image: linear-gradient(to right, #3c455c , #dde2e3 400px, #3c455c 800px);
+}
+/*
+ *
+ * Best way to clear floats
+ *
+ */
+
+
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*Columns*/
+
+.column{
+    background-color: antiquewhite;
+    box-shadow: 10px 10px 5px #888888;
+    height: 160px;
+    width: 31%;
+    margin: 20px 1.16%;
+/*    border: 1px solid red;*/
+    float: left;
+    padding: 15px;
+/*    overflow: hidden;*/
+    position: relative;
+    border-radius: 10px;
+}
+
+
+
+/*
+*
+*
+* Managing text-overflow with multiline support
+*
+*/
+
+
+.block-with-text{
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em; /* em = default font-size, 16px*/
+    max-height: 3.6em;
+    text-align: left;
+    margin-right: -1em;
+    padding-right: 30px;
+    
+}
+.block-with-text:before{
+    content: "...";
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+}
+.block-with-text:after{
+    content: "";
+    position: absolute;
+    right: 17px;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background-color: #b2d6ff;
+}
+
+.read-more{
+    position: absolute;
+    right: 24px;
+    bottom: 21px;
+    color: teal;
+    font-size: 20px;
+    text-decoration: none;
+}

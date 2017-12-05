@@ -1,0 +1,105 @@
+/*/*type selector*/
+
+/*p{
+	background-color: yellow;
+}*/
+
+/*#para1{
+	background-color: red;
+}
+
+.paragraphs{
+	background-color: magenta;
+}
+
+a[target]{
+	color: green;
+}
+
+a[target="_top"]{
+	color: indigo;
+}
+*/
+
+/*universal selector*/
+/*body *{
+	background-color: green;
+}*/
+
+/*Adjacent Siblings*/
+/*h5 + a{
+	background-color: red;
+}
+
+a + br + a,
+a + br + br + a{
+	background-color: green;
+}*/
+/*
+h5 ~ a{
+
+	background-color: yellow;
+
+}*/
+
+/*div > a{
+	background-color: blue;
+}*/
+/*
+div a {
+	background-color: yellow;
+}*/
+
+
+
+
+/* Pseudo-Class */
+/*
+a:link {
+	color: orange;
+	background-color: black;
+	padding: 10px;
+}
+/*
+a:visited{
+	color: yellow;
+	background-color: green;
+}
+
+*/
+/*
+a:focus{
+	background-color: black;
+	color: red;
+}*/
+
+a:hover{
+	background-color: blue;
+	color: orange;
+}
+
+a:active,
+h3:active,
+h5:active{
+	background-color: yellow;
+	color: black;
+}
+
+/*first-child*/
+/*li:first-child,
+li:last-child{
+	background-color: black;
+	color: yellow;
+}
+
+p:first-child,
+p:last-child{
+	background-color: black;
+	color: yellow;
+}*/
+
+li:nth-child(even),
+p:nth-child(odd){
+	background-color: black;
+	color: orange;
+}
