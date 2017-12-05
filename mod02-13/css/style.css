@@ -1,0 +1,142 @@
+/*CSS Reset*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* clear */
+
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.avatar{
+    width: 50%;
+    height: auto;
+    content: url(../img/boralogo.png);
+    background-color: lightgrey;
+    margin: 20px auto 20px;
+}
+
+header{
+    background-color: white;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    float: left;
+}
+
+div.wrapper{
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 80%;
+    float: right;
+}
+
+div.home-class{
+   background: 
+    /* top, transparent deepskyblue */
+    linear-gradient(
+      rgba(0, 191, 255, 0.35), 
+      rgba(0, 191, 255, 0.35)
+    ),
+    /* your image */
+    url(../img/boracayhd.jpg);
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+}
+
+div.hide-btn{
+    background-color: #160631;
+    width: 50px;
+    height: 50px;
+    border-bottom-right-radius: 5px;
+}
+
+div.website{
+    background: linear-gradient(
+      rgba(0, 191, 255, 0.55), 
+      rgba(0, 191, 255, 0.55));
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    border: 5px solid white;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+div.brandname{
+    height: 100px;
+    line-height: 100px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 2vw;
+    color: #1B122B;
+}
+
+#bora{
+    font-size: 1.5vw;
+    font-family: 'Raleway', serif;
+    color: #1B122B;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+div.about-class{
+    background-color: coral;
+    height: 40vh;
+}
+
+div.services-class{
+    background-color: darkred;
+    height: 40vh;
+}
+
+div.project-class{
+    background-color: lavender;
+    height: 40vh;
+}
+
+div.gallery-class{
+    background-color: deeppink;
+    height: 40vh;
+}
+
+div.footer-class{
+    background-color: wheat;
+    height: 4vh;
+    line-height: 4vh;    
+}
+
+div.footer-class > p {
+    margin-left: 10px;
+}
+
+nav > ul > li {
+    text-align: center;
+    margin-bottom: 15px;
+    
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: #34244E;
+    background-color: deepskyblue;
+    height: 5vh;
+    line-height: 5vh;
+    margin: 0 auto;
+/*    padding: 0.6rem 0.9rem;*/
+    border-radius: 5px;
+    width: 45%;
+    max-width: 100%;
+    display: block;
+    font-size: 1vw;
+    font-family: 'Raleway', sans-serif;
+}
