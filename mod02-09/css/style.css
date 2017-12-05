@@ -13,7 +13,7 @@ body{
 .wrapper{
 	width: 80%;
 	margin: 0 auto; /* To center the wrapper */
-	background-color: #fff; 
+	background-color: #fff;
 
 }
 
@@ -81,12 +81,6 @@ main.wrapper > p {
  *
  */
 
-/* div{
- 	width: 100px;
- 	height: 100px;
- 	border: 1px solid black;
- 	/*position: absolute;
- }*/
 
  .blue{
  	background-color: blue;
@@ -116,12 +110,6 @@ main.wrapper > p {
  *
  */
 
-/*
- main.wrapper div {
- 	padding: 0;
- 	margin: 0;
- }
-*/
 
  .menu{
     line-height: 100px;
