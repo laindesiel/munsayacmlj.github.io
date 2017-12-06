@@ -200,4 +200,11 @@ nav > ul > li > a{
     display: block;
     font-size: 1vw;
     font-family: 'Raleway', sans-serif;
+    box-shadow: 5px 5px #2C3C51;
+}
+
+nav > ul > li > a:hover{
+    background-color: #2C3C51;
+    color: aliceblue;
+    box-shadow: 5px 5px #5A7484;
 }
