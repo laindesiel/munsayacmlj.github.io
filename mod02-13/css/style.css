@@ -16,6 +16,9 @@
 .avatar{
     width: 150px;
     height: 150px;
+    width: 50%;
+    height: auto;
+    content: url(../img/boralogo.png);
     background-color: lightgrey;
     margin: 20px auto 20px;
 }
@@ -37,13 +40,13 @@ div.wrapper{
 
 div.home-class{
    background: 
-    /* top, transparent red */
+    /* top, transparent deepskyblue */
     linear-gradient(
       rgba(0, 191, 255, 0.35), 
       rgba(0, 191, 255, 0.35)
     ),
     /* your image */
-    url(../img/boracay.jpg);
+    url(../img/boracayhd.jpg);
     background-size: cover;
     height: 90vh;
     position: relative;
@@ -53,6 +56,16 @@ div.website{
     background: linear-gradient(
       rgba(0, 191, 255, 0.35), 
       rgba(0, 191, 255, 0.35));
+    background-color: #160631;
+    width: 50px;
+    height: 50px;
+    border-bottom-right-radius: 5px;
+}
+
+div.website{
+    background: linear-gradient(
+      rgba(0, 191, 255, 0.55), 
+      rgba(0, 191, 255, 0.55));
     height: 50%;
     width: 50%;
     text-align: center;
@@ -68,6 +81,17 @@ div.website{
 div.brandname{
     height: 100px;
     line-height: 100px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 2vw;
+    color: #1B122B;
+}
+
+#bora{
+    font-size: 1.5vw;
+    font-family: 'Raleway', serif;
+    color: #1B122B;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 div.about-class{
@@ -96,13 +120,36 @@ nav > ul > li {
     margin-bottom: 30px;
 }
 
+.footer-class{
+    background-color: wheat;
+    height: 4vh;
+    line-height: 4vh;    
+}
+
+div.footer-class > p {
+    margin-left: 10px;
+}
+
+nav > ul > li {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 nav > ul > li > a{
     text-decoration: none;
-    color: #000;
     background-color: deepskyblue;
     height: 50px;
     margin: 0 auto;
-    padding: 0.6rem 0.9rem;
     border-radius: 5px;
     width: 60%;
+    color: #34244E;
+    height: 5vh;
+    line-height: 5vh;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 45%;
+    max-width: 100%;
+    display: block;
+    font-size: 1vw;
+    font-family: 'Raleway', sans-serif;
 }
