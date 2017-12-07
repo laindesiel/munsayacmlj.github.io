@@ -1,0 +1,335 @@
+/* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* clear */
+
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* General Rules */
+
+
+
+header{
+    background-color: #262626;
+}
+
+
+.homecls{
+    background-color: azure;
+  
+}
+
+.aboutcls{
+    background-color: cadetblue;
+  
+}
+
+.servicescls{
+    background-color: #262626;
+   
+}
+
+.projectcls{
+    background-color: cornflowerblue;
+}
+
+.gallerycls{
+    background-color: cornsilk;
+}
+
+.footer{
+    background-color: darksalmon;
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .page{
+        min-width: 100vw;
+        min-height: 60vh;
+    }
+    
+    header{
+        min-height: 50vh;
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+    }
+    
+    .logo{
+        content: url(../img/suitslogo.jpg);
+        width: 40%;
+        height: auto;
+        border-radius: 5px;
+        position: relative;
+        left: 30%;
+    }
+    
+    
+    nav > ul > li > a {
+        display: block;
+        text-align: center;
+        width: 40%;
+        margin: 0 auto;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    div.homecls{
+        overflow: hidden;
+    }
+    
+    div.homecls{
+        background-image: url(../img/bannerlogo1.jpg);
+        display: block;
+        background-position: center;
+        background-size: cover;
+        max-width: 100vh;
+        height: auto;
+        position: relative;
+    }
+    
+    
+    
+    div.banner-para{
+        background: linear-gradient(to right, rgba(22,22,22,0.57) 2%,rgba(13,13,13,0.57) 35%,rgba(0,0,0,0.43) 85%,rgba(0,0,0,0.41) 94%);
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 24%;
+        border-radius: 10px;
+        font-weight: bold;
+        z-index: 9999;
+    }
+    
+    div.banner-para > p{
+        margin: 5px;
+        color: white;
+        font-size: 0.875rem;
+    }
+    
+    
+    /*
+    *
+    * About
+    *
+    */
+    
+    div.aboutcls{
+        background-image: url(../img/harveyspecter.jpg);
+        display: block;
+        background-position: center;
+        background-size: cover;
+        max-width: 100vh;
+        height: auto;
+        z-index: 0;
+        position: relative;
+    }
+    
+    div.aboutbgcolor{
+        background: linear-gradient(45deg, rgba(0,0,0,0.65) 31%,rgba(0,0,0,0.64) 32%,rgba(0,0,0,0.45) 49%,rgba(0,0,0,0.21) 70%,rgba(0,0,0,0) 89%);
+        z-index: 1;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+    }
+    
+    div.abouttxt{
+        width: 40%;
+        position: absolute;
+        top: 2em;
+        left: 2em;
+    }
+    
+    div.abouttxt h1{
+        color: white;
+    }
+    
+    
+    /*
+    *
+    * Services
+    *
+    */
+    
+    div.servicescls{
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    
+    div.service1-wrapper,
+    div.service2-wrapper,
+    div.service3-wrapper,
+    div.service4-wrapper{
+        margin: 0 1em 1em;
+    }
+    
+    div.service1-img,
+    div.service2-img,
+    div.service3-img,
+    div.service4-img{
+        background-image: url(../img/redpanda.jpg);
+        display: block;
+        background-position: center;
+        background-size: cover;
+        width: 24vw;
+        height: 12vh;
+        float: left;
+        margin: 0 10px 5px;
+        border-radius: 5px;
+    }
+    
+    div.greatservice1,
+    div.greatservice2,
+    div.greatservice3,
+    div.greatservice4{
+        color: white;
+        margin-bottom: 5px;
+    }
+    
+    div.greatservice1-para,
+    div.greatservice2-para,
+    div.greatservice3-para,
+    div.greatservice4-para{
+        color: white;
+        margin-left: 6em;
+    }
+    
+    
+    /*
+    *
+    * Project
+    *
+    */
+    div.projectcls{
+        background-image: url(../img/jessicapearson.jpg);
+        display: block;
+        background-position: center;
+        background-size: cover;
+        max-width: 100vw;
+        height: auto;
+        z-index: 0;
+        position: relative;
+    }
+    
+    div.projectbgcolor{
+        background: linear-gradient(to right, rgba(0,0,0,0.65) 9%,rgba(0,0,0,0.65) 21%,rgba(0,0,0,0.58) 29%,rgba(0,0,0,0.44) 46%,rgba(0,0,0,0.34) 58%,rgba(0,0,0,0.28) 66%,rgba(0,0,0,0) 100%);
+        z-index: 100;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+    }
+    
+    div.projecttxt{
+        width: 40%;
+        position: absolute;
+        top: 2em;
+        left: 1em;
+    }
+    
+    div.projecttxt h3{
+        color: #737373;
+        font-size: 1.30rem;
+    }
+    
+    div.projecttxt h3 > span{
+        color: white;
+    }
+    
+    
+    /*
+    *
+    * Gallery
+    *
+    */
+    
+    div.gallerycls{
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    
+    div.gallery-wrapper{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    
+    div.gallery-img1,
+    div.gallery-img2,
+    div.gallery-img3,
+    div.gallery-img4{
+        display: block;
+        background-position: center;
+        background-size: cover;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    div.gallery-img1{
+        content: url(../img/suits_gallery1.jpg);;
+    }
+    
+    div.gallery-img2{
+        content: url(../img/suits_gallery2.jpg);
+    }
+    
+    div.gallery-img3{
+        content: url(../img/suits_gallery3.jpg);
+    }
+    
+    div.gallery-img4{
+        content: url(../img/suits_gallery4.jpg);
+    }
+    div.gallery-para1,
+    div.gallery-para2,
+    div.gallery-para3,
+    div.gallery-para4{
+        margin: 1em
+    }
+    
+    div.gallery-para1 h3,
+    div.gallery-para2 h3,
+    div.gallery-para3 h3,
+    div.gallery-para4 h3 {
+        margin-bottom: 1em;
+    }
+    
+    /*
+    *
+    * Footer
+    *
+    */
+    
+    div.footer{
+        min-height: 20vh;
+        position: relative;
+    }
+    
+    div.name{
+        font-size: 0.9em;
+        text-align: center;
+        
+    }
+    
+    div.social-link{
+        text-align: center;
+    }
+    
+    div.footer-wrapper{
+        width: 92vw;
+        height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+}
+
