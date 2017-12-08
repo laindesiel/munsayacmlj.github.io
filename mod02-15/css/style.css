@@ -1,0 +1,140 @@
+/* CSS Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.clear:after{
+    content: "";
+    display: block;
+    clear: both; 
+}
+
+/* General Rules */
+
+
+
+.wrapper{
+    width: 100%;
+}
+
+.webname{
+    background-color: aquamarine;
+    height: 80vh;
+}
+
+.about-class{
+    background-color: cornflowerblue;
+    height: 80vh;
+    
+}
+
+.about-class p{
+    margin-bottom: 20px;
+}
+
+.service-class{
+    background-color: cornsilk;
+    height: 80vh;
+}
+
+.project-class{
+    background-color: darkseagreen;
+    height: 80vh;
+}
+
+.gallery-class{
+    background-color: deepskyblue;
+    height: 80vh;
+}
+
+.footer{
+    background-color: beige;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+
+/*
+*
+* Mobile Devices
+*
+*/
+
+@media only screen and (max-width: 480px){
+    .hdr{
+        width: 100%;
+        background-color: bisque;
+        height: 70vh;
+        padding-top: 20px;
+    }
+    
+    .avatar{
+        background-color: lightgray;
+        width: 35%;
+        height: auto;
+        content: url(../img/boralogo.png);
+        margin: 0 auto 10px;
+    }
+    
+    .webname{
+        position: relative;
+    }
+    
+    .brandname{
+        border: 2px solid white;
+        width: 50%;
+        height: 30vh;
+        text-align: center;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .service-wrap{
+        margin: 20px 10px 0;
+    }
+    .srv-img1{
+        background-color: lightgray;
+        width: 20%;
+        height: 20%;
+        float: left;
+/*        content: url(../img/boralogo.png);*/
+/*        display: block;*/
+        
+    }
+    
+    div.srv-img1 > img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .snorkling{
+        width: 80%;
+        margin-left: 20%;
+        
+    }
+    .srv-para1{
+        width: 80;
+        margin-left: 20%;
+        font-size: 0.8em;
+    }
+    
+    
+    nav > ul > li >a{
+        display: block;
+        width: 70%;
+        height: 5vh;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: brown;
+    }
+}

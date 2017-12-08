@@ -14,8 +14,6 @@
 }
 
 .avatar{
-    width: 150px;
-    height: 150px;
     width: 50%;
     height: auto;
     content: url(../img/boralogo.png);
