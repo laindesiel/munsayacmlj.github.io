@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.6;
+}
+
+hr{
+    margin: 10px 0;
+}
+
+div.nav-bar{
+    height: 2em;
+    background-color: #e1518d;
+    border-bottom: 1px solid #e1e1e1;
+    min-width: 100%;
+}
+
+ul.align-left{
+    width: 90%;
+    margin: 0 auto;
+    line-height: 2em;
+    text-align: center;
+}
+
+li.nav-list{
+    list-style-type: none;
+    display: inline;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+}
+
+ul > li > a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+section.row{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+div.column{
+    flex: 1;
+    display: block;
+    min-width: 100%;
+}
+
+div.mainImageBox img{
+    width: 100%;
+    height: 100%;
+    position: static;
+    display: block;
+}
+
+div.mainImageBox{
+    position: relative;
+/*    height: 200px;*/
+}
+
+.content{
+    background-image: url(../img/home-image.PNG);
+/*    background-position: center;*/
+    background-size: 100% 62%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    position: relative;
+}
+
+div.pageTitle{
+    width: 100%;
+/*
+    position: absolute;
+    top: 0;
+*/
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+/*    margin: 0 auto;*/
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    padding-top: 40px;
+}
+
+
+div.pageTitle > h1{
+    font-family: 'Shadows Into Light Two', cursive;
+    color: rgba(0,0,0,0.6);
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+cite{
+    display: none;
+    font-family: 'Shadows Into Light Two', cursive;
+/*    color: color: rgba(60,60,60,0.7);*/
+    font-size: 1.2em;
+}
+
+
+/*
+ *
+ *About
+ * 
+*/
+
+.about{
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 45px 30px 25px;
+    margin-right: 0;
+}
+
+.fadein{
+/*
+    max-width: 80vw;
+    height: 70vh;
+*/
+    width: 80vw;
+    height: 70vh;
+    overflow: hidden;
+    margin: 0 auto 25px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.fadein img{
+    width: 100%;
+    height: 70vh;
+    max-height: 70vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+div.rabbit > h2{
+    text-align: center;
+    font-family: 'Shadows Into Light Two', cursive;
+    color: #e1518d;
+    margin: 20px 0;
+}
+
+div.separator{
+    border-color: #e7e6e6;
+    border-top: 1px solid;
+    width: 100%;
+    height: 0.3px;
+    margin: 25px auto;
+}
+
+div.rabbit p {
+    color: #747474;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+div.button-wrapper{
+    display: block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+div.button-wrapper > a{
+    text-decoration: none;
+    background-image: linear-gradient(to top,#aad75d,#d1e990);  
+    color: #54770f;
+    padding: 15px 25px;
+    border: 1px solid #9dba60;
+}
+
+/*
+ *
+ * Destinations
+ *
+*/
+
+
+.destinations{
+    width: 100%;
+    background-color: #fff;
+    padding: 0 30px 25px;
+}
+
+div.title-destinations{
+    width: 100%;
+    display: flex;
+    
+}
+
+div.title-destinations > h2{
+    font-size: 24px;
+    font-family: 'Shadows Into Light Two', cursive;
+    color: #e1518d;
+    margin-right: 0.5em
+}
+
+list > ul > li{
+    list-style-type: none;
+    max-height: 45vh;
+    margin: 0 auto;
+    text-align: center;
+/*    padding-bottom: 10px;*/
+}
+
+list a{
+    padding-top: 40vh;
+}
+
+list > ul > li > a > img{
+    width: 100%;
+    height: 45vh;
+    max-height: 45vh;
+}
+
+
+/*
+ *
+ * Footer
+ *
+*/
+
+div.footer{
+    width: 100%;
+    background-image: linear-gradient(to top,#9db600,#f1e990); 
+    height: 50px;
+    letter-spacing: 0.1em;
+}
+
+div.social-media{
+    width: 100%;
+    text-align: center;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+div.social-media p{
+    margin-bottom: 0;
+}
+
+div.icon{
+    text-align: center;
+}
+
+div.icon i{
+    font-size: 1.3em;
+    height: 1.4em;
+    line-height: 1.4em;
+}
+
+div.icon span{
+/*    font-family: 'Shadows Into Light Two', cursive;*/
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+
+@media only screen and (min-width: 400px) and (max-width: 700px){
+    
+    list > ul > li{
+    list-style-type: none;
+    max-height: 65vh;
+    margin: 0 auto;
+    text-align: center;
+/*    padding-bottom: 10px;*/
+}
+    
+    list > ul > li > a > img{
+    width: 100%;
+    height: 65vh;
+    max-height: 65vh;
+}
+}
