@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 body{
     line-height: 1.6;
 }
@@ -17,28 +23,60 @@ div.nav-bar{
     background-color: #e1518d;
     border-bottom: 1px solid #e1e1e1;
     min-width: 100%;
+    display: flex;
 }
 
 ul.align-left{
-    width: 90%;
+    width: 62%;
+/*    margin: 0 auto;*/
     margin: 0 auto;
+    margin-right: 0;
+    margin-left: 1em;
     line-height: 2em;
-    text-align: center;
+/*    text-align: center;*/
 }
+
+div.nav-bar > ul > li > a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.73em;
+}
+
+ul.align-left li{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+div.insta-icon{
+    margin: 0 auto;
+/*    margin-left: 2.8em;*/
+    margin-right: 1em;
+    line-height: 2em;
+    
+}
+
+div.insta-icon a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+div.insta-icon span{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+}
+
 
 li.nav-list{
     list-style-type: none;
     display: inline;
+/*
     margin-right: 0.3em;
-    margin-left: 0.3em;
+    margin-left: 0.6em;
+*/
 }
 
-ul > li > a{
-    text-decoration: none;
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1em;
-}
 
 .wrapper{
     width: 100%;
@@ -75,7 +113,7 @@ div.mainImageBox{
 .content{
     background-image: url(../img/home-image.PNG);
 /*    background-position: center;*/
-    background-size: 100% 62%;
+    background-size: 100% 64%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
@@ -113,9 +151,10 @@ div.pageTitle > h1{
 
 cite{
     display: none;
-    font-family: 'Shadows Into Light Two', cursive;
+    font-family: 'Raleway', sans-serif;
 /*    color: color: rgba(60,60,60,0.7);*/
     font-size: 1.2em;
+    color: #000;
 }
 
 
@@ -137,7 +176,7 @@ cite{
     max-width: 80vw;
     height: 70vh;
 */
-    width: 80vw;
+    width: 100%;
     height: 70vh;
     overflow: hidden;
     margin: 0 auto 25px;
@@ -216,12 +255,29 @@ div.title-destinations > h2{
     margin-right: 0.5em
 }
 
+div.container-fluid{
+    width: 100%;
+}
+
+div.container-fluid img{
+    width: 100%;
+    height: 50vh;
+    max-height: 50vh;
+    margin-bottom: 0;
+}
+
+div.row div{
+    padding: 0;
+}
+
+/*
+
 list > ul > li{
     list-style-type: none;
     max-height: 45vh;
     margin: 0 auto;
     text-align: center;
-/*    padding-bottom: 10px;*/
+
 }
 
 list a{
@@ -233,6 +289,7 @@ list > ul > li > a > img{
     height: 45vh;
     max-height: 45vh;
 }
+*/
 
 
 /*
@@ -246,6 +303,7 @@ div.footer{
     background-image: linear-gradient(to top,#9db600,#f1e990); 
     height: 50px;
     letter-spacing: 0.1em;
+    color: #000;
 }
 
 div.social-media{
@@ -257,6 +315,7 @@ div.social-media{
 }
 div.social-media p{
     margin-bottom: 0;
+    font-weight: 700;
 }
 
 div.icon{
@@ -267,6 +326,11 @@ div.icon i{
     font-size: 1.3em;
     height: 1.4em;
     line-height: 1.4em;
+    font-weight: 500;
+}
+
+div.icon a{
+    color: #000;
 }
 
 div.icon span{
@@ -276,19 +340,161 @@ div.icon span{
 }
 
 
-@media only screen and (min-width: 400px) and (max-width: 700px){
+@media only screen
+    and (min-width: 400px)
+    and (max-width: 480px){
     
-    list > ul > li{
-    list-style-type: none;
-    max-height: 65vh;
-    margin: 0 auto;
-    text-align: center;
-/*    padding-bottom: 10px;*/
-}
+        .content{
+            background-size: 100% 74%;
+            height: 65vh;
+        }
+        
+        div.container-fluid img{
+            width: 100%;
+            height: 65vh;
+            max-height: 65vh;
+        }
+        
+        ul.align-left{
+            width: 50%;
+            /*    margin: 0 auto;*/
+            margin: 0 2em;
+            line-height: 2em;
+            text-align: center;
+        }
+
+        div.insta-icon{
+            margin: 0 auto;
+            line-height: 2em;
+        }
+
+        div.insta-icon a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        div.insta-icon span{
+            font-family: 'Raleway', sans-serif;
+        }
+
     
-    list > ul > li > a > img{
-    width: 100%;
-    height: 65vh;
-    max-height: 65vh;
+        
 }
+
+/*
+ *
+ * Tablet
+ *
+ */
+
+@media only screen
+    and (min-width: 481px)
+    and (max-width: 768px){
+        
+        div.nav-bar{
+            height: 4em;
+        }
+        
+        div.nav-bar > ul > li a{
+            font-size: 1.6em;
+        }
+        
+        ul.align-left{
+            line-height: 4em;
+            margin-left: 1.6em;
+        }
+        
+        div.insta-icon{
+            font-size: 2em;
+        }
+        
+        cite{
+            display: block;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        div.pageTitle{
+            padding-top: 10px;
+        }
+        
+        div.pageTitle > h1{
+            font-size: 4em;
+        }
+        
+        div.rabbit h2{
+            font-size: 4em;
+        }
+        
+        div.rabbit p{
+            font-size: 1.7em;
+        }
+        
+        div.title-destinations h2{
+            font-size: 2.5em;
+        }
+    
+        ul.align-left{
+            text-align: left;
+        }
+        
+        div.footer{
+            height: 8em;
+        }
+        
+        div.social-media p{
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        div.icon{
+            font-size: 2em;
+            font-weight: 600;
+        }
+       
+}
+
+/*
+ *
+ * Desktop
+ *
+ */
+
+@media only screen 
+    and (min-width: 769px){
+        
+        div.nav-bar{
+            height: 5em;
+        }
+        
+        div.nav-bar > ul > li a{
+            font-size: 1.6em;
+        }
+        
+        ul.align-left{
+            line-height: 5em;
+            margin-left: 2em;
+        }
+        
+        div.pageTitle{
+            padding-left: 5em;
+            padding-right: 5em;
+        }
+        
+        div.pageTitle h1{
+            font-size: 5em;
+        }
+        
+        div.insta-icon{
+            font-size: 2em;
+            line-height: 2.5em;
+        }
+        
+        cite{
+            display: block;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: 500;
+        }
 }
