@@ -18,6 +18,10 @@ hr{
     margin: 10px 0;
 }
 
+h2{
+    margin-top: 15px;
+}
+
 div.nav-bar{
     height: 2em;
     background-color: #e1518d;
@@ -84,6 +88,7 @@ li.nav-list{
     background-color: white;
 }
 
+/*
 section.row{
     display: flex;
     flex-direction: column;
@@ -97,6 +102,7 @@ div.column{
     display: block;
     min-width: 100%;
 }
+*/
 
 div.mainImageBox img{
     width: 100%;
@@ -134,7 +140,7 @@ div.pageTitle{
 /*    margin: 0 auto;*/
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 60px;
+/*    padding-bottom: 60px;*/
     padding-top: 40px;
 }
 
@@ -164,11 +170,17 @@ cite{
  * 
 */
 
+section.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .about{
     width: 100%;
     background-color: #f8f8f8;
     padding: 45px 30px 25px;
     margin-right: 0;
+    margin-left: 0;
 }
 
 .fadein{
@@ -176,7 +188,7 @@ cite{
     max-width: 80vw;
     height: 70vh;
 */
-    width: 100%;
+/*    width: 100%;*/
     height: 70vh;
     overflow: hidden;
     margin: 0 auto 25px;
@@ -186,8 +198,8 @@ cite{
 
 .fadein img{
     width: 100%;
-    height: 70vh;
-    max-height: 70vh;
+    height: 71vh;
+    max-height: 71vh;
     position: absolute;
     left: 0;
     top: 0;
@@ -396,16 +408,17 @@ div.icon span{
         }
         
         div.nav-bar > ul > li a{
-            font-size: 1.6em;
+            font-size: 1.3em;
         }
         
         ul.align-left{
             line-height: 4em;
-            margin-left: 1.6em;
+            margin-left: 1em;
         }
         
         div.insta-icon{
-            font-size: 2em;
+            font-size: 1.6em;
+            line-height: 2.4em;
         }
         
         cite{
@@ -420,7 +433,7 @@ div.icon span{
         }
         
         div.pageTitle > h1{
-            font-size: 4em;
+            font-size: 4.3em;
         }
         
         div.rabbit h2{
@@ -464,6 +477,10 @@ div.icon span{
 @media only screen 
     and (min-width: 769px){
         
+        hr{
+            display: none;
+        }
+        
         div.nav-bar{
             height: 5em;
         }
@@ -486,10 +503,6 @@ div.icon span{
             font-size: 5em;
         }
         
-        div.insta-icon{
-            font-size: 2em;
-            line-height: 2.5em;
-        }
         
         cite{
             display: block;
@@ -497,4 +510,54 @@ div.icon span{
             text-align: center;
             font-weight: 500;
         }
+        
+        .fadein{
+            width: 65%;
+            height: 71vh;
+        }
+        
+        .rabbit{
+            margin-left: 1.1em;
+        }
+        
+        .rabbit > h2{
+            font-size: 4.6em;
+        }
+        
+        .rabbit p {
+            font-size: 1.6em;
+            margin-bottom: 0;
+        }
+        
+        div.title-destinations > h2{
+            font-size: 40px;
+        }
+        
+        div.separator{
+            margin-top: 35px;
+        }
+        
+        
+        div.container-fluid img{
+            width: 90%;
+            height: 40vh;
+            margin: 1em;
+        }
+        
+        div.button-wrapper > a{
+            padding: 20px 35px;
+            font-size: 1.5em;
+        }
+        
+        div.button-wrapper{
+            margin-top: 1em;
+            height: 5em;
+            line-height: 5em;
+        }
+        
+        div.insta-icon{
+            font-size: 2em;
+            line-height: 2.5em;
+        }       
 }
+        
