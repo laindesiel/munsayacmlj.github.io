@@ -281,7 +281,7 @@ div.container-fluid{
     width: 100%;
 }
 
-div.container-fluid img{
+div.homeimg img{
     width: 100%;
     height: 50vh;
     max-height: 50vh;
@@ -367,6 +367,10 @@ div.city-wrapper{
     padding-right: 0;
 }
 
+.beijingimg{
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
 div.title-beijing{
     text-align: center;
     font-family: 'Cardo', serif;
@@ -386,6 +390,7 @@ div.summer-palace{
 div.city-description{
     width: 90%;
     margin: 0 auto;
+    float: none;
 }
 
 div.forbidden-city h2,
@@ -420,7 +425,7 @@ div.summer-palace p{
             height: 65vh;
         }
         
-        div.container-fluid img{
+        div.homeimg img{
             max-width: 100%;
             height: 65vh;
             max-height: 65vh;
@@ -456,7 +461,7 @@ div.summer-palace p{
          */
          
         .col-xs-12{
-            float: none;
+/*            float: none;*/
         }
         
         
@@ -561,19 +566,24 @@ div.summer-palace p{
         }
         
         div.city-description{
-            width: 50%; 
+            width: 48%; 
             margin: 0;
+            float: left;
+            margin-right: 0.9em;
         }
-        div.container-fluid img{
-            width: 100%;
-            height: 25vh;
+        .beijingimg{
+/*            width: 100%;*/
+/*            height: 25vh;*/
             padding-right: 0;
+            
+        }
+
+        .col-sm-4{
+            width: 30.333333%;
+            margin-left: 1em;
         }
         
-    .col-sm-4{
-        width: 30.333333%;
-        margin-left: 1em;
-    }
+        
         
 }
 
@@ -599,7 +609,7 @@ div.summer-palace p{
             margin: 0 auto;
         }
         
-        div.container-fluid img{
+        div.homeimg img{
             height: 80vh;
             max-height: 80vh;
         }
@@ -676,7 +686,7 @@ div.summer-palace p{
         }
         
         
-        div.container-fluid img{
+        div.homeimg img{
             width: 90%;
             height: 40vh;
             margin: 1em;
@@ -710,9 +720,19 @@ div.summer-palace p{
         }
         
         div.city-description{
-            width: 50%;   
+            width: 48%;   
+            float: left;
+            margin-right: 1em;
         }
+/*
         div.container-fluid img{
+            width: 50%;
+            height: 50vh;
+            margin: 0;
+            padding-right: 0;
+        }
+*/
+        .beijingimg{
             width: 50%;
             height: 50vh;
             margin: 0;
@@ -739,7 +759,7 @@ div.summer-palace p{
         }
         
         
-        div.container-fluid img{
+        div.homeimg img{
             width: 100%;
             height: 30vh;
         }
@@ -758,11 +778,11 @@ div.summer-palace p{
         
         .fadein{
             width: 65%;
-            height: 80vh;
+            height: 100vh;
         }
         .fadein img{
-            height: 80vh;
-            max-height: 80vh;
+            height: 100%;
+            max-height: 100%;
         }
 }
         
