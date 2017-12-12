@@ -113,7 +113,6 @@ div.mainImageBox img{
 
 div.mainImageBox{
     position: relative;
-/*    height: 200px;*/
 }
 
 .content{
@@ -127,26 +126,24 @@ div.mainImageBox{
     position: relative;
 }
 
-.beijing-bg{
-    background-image: url(../img/beijing/greatwall2.PNG);
-    background-size: 100% 64%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    width: 100%;
-    height: 55vh;
-    position: relative;
-}
 
 
 div.pageTitle{
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/*
     position: sticky;
     position: -webkit-sticky;
     top: 0;
+*/
+/*
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 40px;
+*/
 }
 
 div.pageTitle > h1{
@@ -157,6 +154,7 @@ div.pageTitle > h1{
     margin-bottom: 0;
     line-height: 1.6em;
     text-align: center;
+    margin-top: 0;
 }
 
 div.beijing-bg h1{
@@ -186,7 +184,7 @@ cite{
  * 
 */
 
-section.container-fluid{
+.container-fluid{
     padding-left: 0;
     padding-right: 0;
 }
@@ -200,11 +198,7 @@ section.container-fluid{
 }
 
 .fadein{
-/*
-    max-width: 80vw;
-    height: 70vh;
-*/
-/*    width: 100%;*/
+    width: 100%;
     height: 70vh;
     overflow: hidden;
     margin: 0 auto 25px;
@@ -214,7 +208,7 @@ section.container-fluid{
 
 .fadein img{
     width: 100%;
-    height: 71vh;
+    height: 70vh;
     max-height: 71vh;
     position: absolute;
     left: 0;
@@ -225,7 +219,7 @@ div.rabbit > h2{
     text-align: center;
     font-family: 'Shadows Into Light Two', cursive;
     color: #e1518d;
-    margin: 20px 0;
+    margin: 0 0 20px;
 }
 
 div.separator{
@@ -298,27 +292,6 @@ div.row div{
     padding: 0;
 }
 
-/*
-
-list > ul > li{
-    list-style-type: none;
-    max-height: 45vh;
-    margin: 0 auto;
-    text-align: center;
-
-}
-
-list a{
-    padding-top: 40vh;
-}
-
-list > ul > li > a > img{
-    width: 100%;
-    height: 45vh;
-    max-height: 45vh;
-}
-*/
-
 
 /*
  *
@@ -368,6 +341,76 @@ div.icon span{
 }
 
 
+/*
+ *
+ * City Wrapper
+ *
+*/
+
+div.city-wrapper{
+    background-color: #f8f8f8;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/*
+ *
+ * Beijing
+ *
+ */
+
+.col-xs-12{
+/*    float: none;*/
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.title-beijing{
+    text-align: center;
+    font-family: 'Cardo', serif;
+/*    color: #e1518d;*/
+    color: #8B008B;
+}
+
+div.forbidden-city,
+div.great-wall,
+div.summer-palace{
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px 15px 10px;
+    margin-right: 0;
+    margin-left: 0;
+}
+div.city-description{
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.forbidden-city h2,
+div.great-wall h2,
+div.summer-palace h2{
+    color: #8B008B;
+    font-family: 'Cardo', serif;
+    font-size: 2em;
+}
+
+div.forbidden-city p,
+div.great-wall p,
+div.summer-palace p{
+    font-family: 'Raleway', sans-serif;
+    color: #747474;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/*
+ *
+ * Mobile
+ *
+ */
+
 @media only screen
     and (min-width: 400px)
     and (max-width: 480px){
@@ -378,7 +421,7 @@ div.icon span{
         }
         
         div.container-fluid img{
-            width: 100%;
+            max-width: 100%;
             height: 65vh;
             max-height: 65vh;
         }
@@ -405,7 +448,17 @@ div.icon span{
             font-family: 'Raleway', sans-serif;
         }
 
-    
+        
+        /*
+         *
+         * Beijing
+         *
+         */
+         
+        .col-xs-12{
+            float: none;
+        }
+        
         
 }
 
@@ -417,24 +470,37 @@ div.icon span{
 
 @media only screen
     and (min-width: 481px)
-    and (max-width: 768px){
+    and (min-width: 737px)
+    and (max-width: 768px)
+{
         
         div.nav-bar{
-            height: 4em;
+            height: 2em;
         }
         
         div.nav-bar > ul > li a{
-            font-size: 1.3em;
+            font-size: 1em;
         }
         
         ul.align-left{
-            line-height: 4em;
+            line-height: 2em;
             margin-left: 1em;
         }
         
         div.insta-icon{
             font-size: 1.6em;
-            line-height: 2.4em;
+            line-height: 1em;
+        }
+        
+        .content{
+            background-image: url(../img/home-image.PNG);
+            background-size: 100% 83%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            position: relative;
         }
         
         cite{
@@ -482,7 +548,63 @@ div.icon span{
             font-weight: 600;
         }
        
+        
+        /*
+         *
+         * Beijing
+         *
+         */
+        
+        div.container-fluid{
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        
+        div.city-description{
+            width: 50%; 
+            margin: 0;
+        }
+        div.container-fluid img{
+            width: 100%;
+            height: 25vh;
+            padding-right: 0;
+        }
+        
+    .col-sm-4{
+        width: 30.333333%;
+        margin-left: 1em;
+    }
+        
 }
+
+
+@media only screen
+    and (min-width: 567px)
+    and (max-width: 736px){
+        div.pageTitle > h1{
+            font-size: 3em;
+        }
+        cite{
+            display: none;
+        }
+        
+        .fadein{
+            width: 95%;
+            float: none;
+        }
+        
+        .rabbit{
+            width: 90%;
+            float: none;
+            margin: 0 auto;
+        }
+        
+        div.container-fluid img{
+            height: 80vh;
+            max-height: 80vh;
+        }
+}
+
 
 /*
  *
@@ -575,5 +697,72 @@ div.icon span{
             font-size: 2em;
             line-height: 2.5em;
         }       
+        
+        /*
+         *
+         * Beijing
+         *
+         */
+        
+        div.container-fluid{
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        
+        div.city-description{
+            width: 50%;   
+        }
+        div.container-fluid img{
+            width: 50%;
+            height: 50vh;
+            margin: 0;
+            padding-right: 0;
+        }
+}
+
+@media only screen
+    and (min-width: 1024px){
+        
+        .content{
+            background-image: url(../img/home-image.PNG);
+            background-size: 100% 93%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            width: 100%;
+            height: 78vh;
+            position: relative;
+        }
+        
+        .rabbit h2{
+            margin-top: 0;
+        }
+        
+        
+        div.container-fluid img{
+            width: 100%;
+            height: 30vh;
+        }
+        
+        .col-md-4{
+            width: 31.5%;
+            margin: 0.5em;
+/*            float: none;*/
+        }
+        
+        .row{
+            width: 100%;
+            margin: 0 auto;
+            margin-left: 0.5em;
+        }
+        
+        .fadein{
+            width: 65%;
+            height: 80vh;
+        }
+        .fadein img{
+            height: 80vh;
+            max-height: 80vh;
+        }
 }
         
