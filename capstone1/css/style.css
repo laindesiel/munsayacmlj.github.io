@@ -209,7 +209,7 @@ cite{
 .fadein img{
     width: 100%;
     height: 70vh;
-    max-height: 71vh;
+    max-height: 70vh;
     position: absolute;
     left: 0;
     top: 0;
@@ -283,8 +283,10 @@ div.container-fluid{
 
 div.homeimg img{
     width: 100%;
+/*
     height: 50vh;
     max-height: 50vh;
+*/
     margin-bottom: 0;
 }
 
@@ -357,7 +359,7 @@ div.city-wrapper{
 
 /*
  *
- * Beijing
+ * Cities
  *
  */
 
@@ -367,11 +369,19 @@ div.city-wrapper{
     padding-right: 0;
 }
 
-.beijingimg{
+.cityimg{
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    height: 25em;
 }
 
-div.title-beijing{
+div.title-beijing,
+div.title-hawaii,
+div.title-hongkong,
+div.title-indonesia,
+div.title-japan,
+div.title-malaysia,
+div.title-singapore,
+div.title-philippines{
     text-align: center;
     font-family: 'Cardo', serif;
 /*    color: #e1518d;*/
@@ -380,10 +390,30 @@ div.title-beijing{
 
 div.forbidden-city,
 div.great-wall,
-div.summer-palace{
+div.summer-palace,
+div.oahu,
+div.honolulu,
+div.disneyland,
+div.victoria-harbour,
+div.tsimshatsui,
+div.danau-beratan,
+div.ulun-danu-temple,
+div.uluwatu,
+div.mount-fuji,
+div.fushimi-inari,
+div.kinkakuji,
+div.petronas-tower,
+div.kota-kinabalu,
+div.genting,
+div.sentosa,
+div.gardens-by-the-bay,
+div.fort-canning-park,
+div.boracay,
+div.puerto-galera,
+div.puerto-princesa{
     width: 100%;
     background-color: #f8f8f8;
-    padding: 20px 15px 10px;
+    padding: 20px 15px 1em;
     margin-right: 0;
     margin-left: 0;
 }
@@ -395,15 +425,56 @@ div.city-description{
 
 div.forbidden-city h2,
 div.great-wall h2,
-div.summer-palace h2{
+div.summer-palace h2,
+div.oahu h2,
+div.honolulu h2,
+div.disneyland h2,
+div.victoria-harbour h2,
+div.tsimshatsui h2,
+div.danau-beratan h2,
+div.ulun-danu-temple h2,
+div.uluwatu h2,
+div.mount-fuji h2,
+div.fushimi-inari h2,
+div.kinkakuji h2,
+div.petronas-tower h2,
+div.kota-kinabalu h2,
+div.genting h2,
+div.sentosa h2,
+div.gardens-by-the-bay h2,
+div.fort-canning-park h2,
+div.boracay h2,
+div.puerto-galera h2,
+div.puerto-princesa h2{
     color: #8B008B;
     font-family: 'Cardo', serif;
     font-size: 2em;
+    margin-top: 0;
 }
 
 div.forbidden-city p,
 div.great-wall p,
-div.summer-palace p{
+div.summer-palace p,
+div.oahu p,
+div.honolulu p,
+div.disneyland p,
+div.victoria-harbour p,
+div.tsimshatsui p,
+div.danau-beratan p,
+div.ulun-danu-temple p,
+div.uluwatu p,
+div.mount-fuji p,
+div.fushimi-inari p,
+div.kinkakuji p,
+div.petronas-tower p,
+div.kota-kinabalu p,
+div.genting p,
+div.sentosa p,
+div.gardens-by-the-bay p,
+div.fort-canning-park p,
+div.boracay p,
+div.puerto-galera p,
+div.puerto-princesa p{
     font-family: 'Raleway', sans-serif;
     color: #747474;
     text-align: justify;
@@ -427,8 +498,10 @@ div.summer-palace p{
         
         div.homeimg img{
             max-width: 100%;
+/*
             height: 65vh;
             max-height: 65vh;
+*/
         }
         
         ul.align-left{
@@ -490,6 +563,7 @@ div.summer-palace p{
         ul.align-left{
             line-height: 2em;
             margin-left: 1em;
+            text-align: left;
         }
         
         div.insta-icon{
@@ -522,6 +596,11 @@ div.summer-palace p{
         div.pageTitle > h1{
             font-size: 4.3em;
         }
+    
+        div.homeimg img{
+            height: 30vh;
+            max-height: 30vh;
+        }
         
         div.rabbit h2{
             font-size: 4em;
@@ -535,9 +614,7 @@ div.summer-palace p{
             font-size: 2.5em;
         }
     
-        ul.align-left{
-            text-align: left;
-        }
+       
         
         div.footer{
             height: 8em;
@@ -571,12 +648,6 @@ div.summer-palace p{
             float: left;
             margin-right: 0.9em;
         }
-        .beijingimg{
-/*            width: 100%;*/
-/*            height: 25vh;*/
-            padding-right: 0;
-            
-        }
 
         .col-sm-4{
             width: 30.333333%;
@@ -590,7 +661,8 @@ div.summer-palace p{
 
 @media only screen
     and (min-width: 567px)
-    and (max-width: 736px){
+    and (max-width: 736px)
+    and (orientation: landscape){
         div.pageTitle > h1{
             font-size: 3em;
         }
@@ -609,9 +681,17 @@ div.summer-palace p{
             margin: 0 auto;
         }
         
+        div.homeimg{
+            width: 70%;
+            float: none;
+            margin: 0 auto;
+        }
+        
         div.homeimg img{
+/*
             height: 80vh;
             max-height: 80vh;
+*/
         }
 }
 
@@ -767,7 +847,6 @@ div.summer-palace p{
         .col-md-4{
             width: 31.5%;
             margin: 0.5em;
-/*            float: none;*/
         }
         
         .row{
