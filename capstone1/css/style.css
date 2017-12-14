@@ -247,6 +247,86 @@ div.button-wrapper > a{
     border: 1px solid #9dba60;
 }
 
+div#disclaimer-wrapper{
+    text-align: center;   
+/*    padding-top: 20px;*/
+/*    line-height: 32px;*/
+    position: relative;
+}
+
+div.disclaimer{
+    color: #747474;
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;   
+}
+
+#disclaimer-btn{
+    font-size: 12px;
+}
+
+/* Popup container - can be anything you want */
+.popup{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext{
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    
+    opacity: 0.9;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popuptext{
+    font-size: 12px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
 /*
  *
  * Destinations
@@ -257,7 +337,7 @@ div.button-wrapper > a{
 .destinations{
     width: 100%;
     background-color: #fff;
-    padding: 0 30px 25px;
+    padding: 0 30px 10px;
 }
 
 div.title-destinations{
@@ -279,21 +359,35 @@ div.container-fluid{
 
 div.homeimg img{
     width: 100%;
-/*
-    height: 50vh;
-    max-height: 50vh;
-*/
     margin-bottom: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.overlay{
+    text-align: center;
 }
 
 .overlay h2{
     font-family: 'Cardo', serif;
     color: #8B008B;
+    margin-bottom: 0;
 }
 
 
 div.row div{
     padding: 0;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+    text-align: center;
+    background-color: #ccc;
+    border: 1px solid #ddd;
 }
 
 
@@ -756,18 +850,19 @@ div.balboa-park p{
             font-size: 2.5em;
         }
     
-       
+        /* Footer */   
+    
         
         div.footer{
-            height: 8em;
+            height: 6em;
         }
         
         div.social-media{
-            line-height: 3.4em;
+            line-height: 0.4em;
         }
         
-        div.social-media p{
-            font-size: 2.6em;
+        div.social-media span{
+            font-size: 2em;
             font-weight: 700;
             
         }
@@ -778,11 +873,11 @@ div.balboa-park p{
         }
         
         div.icon a{
-            font-size: 2em;
+            font-size: 1em;
         }
         
         div.icon span{
-            font-size: 2em;
+            font-size: 1.5em;
         }
         
         /*
@@ -843,8 +938,7 @@ div.balboa-park p{
 
 @media only screen
     and (min-width: 567px)
-    and (max-width: 736px)
-    and (orientation: landscape){
+    and (max-width: 736px){
         div.pageTitle > h1{
             font-size: 3em;
         }
@@ -885,6 +979,35 @@ div.balboa-park p{
         .me{
             font-size: 1.2em;
         }
+}
+
+@media only screen
+    and (min-width: 567px)
+    and (max-width: 736px)
+    and (orientation: landscape){
+        
+        div.homeimg{
+            width: 47%;
+            float: left;
+            margin-left: 1em;
+        }
+        
+        div.homeimg img{
+            height: 40vh;
+            max-height: 40vh;
+        }
+        
+        #about-cite{
+            display: block;
+            font-size: 1em;
+            text-align: center;
+            font-weight: 400;
+        }
+        
+        div.about-text h1{
+            font-size: 3.7em;
+        }
+        
 }
 
 
@@ -973,7 +1096,7 @@ div.balboa-park p{
             overflow: hidden;
         }
         
-        .overlay{
+        div.overlay{
             width: 100%;
             height: 100%;
             position: absolute;
@@ -1102,6 +1225,10 @@ div.balboa-park p{
             position: relative;
         }
         
+        div.rabbit{
+            margin-left: 5em;
+        }
+        
         .rabbit h2{
             margin-top: 0;
         }
@@ -1115,6 +1242,7 @@ div.balboa-park p{
         .col-md-4{
             width: 31.5%;
             margin: 0.5em;
+            
         }
         
         .row{
@@ -1124,8 +1252,8 @@ div.balboa-park p{
         }
         
         .fadein{
-            width: 65%;
-            height: 100vh;
+            width: 55%;
+/*            height: 50;*/
         }
         .fadein img{
             height: 100%;
@@ -1148,6 +1276,13 @@ div.balboa-park p{
         .me{
             width: 45%;
             margin-left: 2em;
+        }
+}
+
+@media only screen
+    and (min-width: 1280px){
+        .col-md-4{
+            
         }
 }
         

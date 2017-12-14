@@ -11,7 +11,7 @@ $(document).ready(function (){
  window.onscroll = function() {scrollFunction()};
 
     function scrollFunction() {
-        if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && (screen.width > 1023))  {
+        if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && (screen.width > 1279))  {
             document.getElementById("myBtn").style.display = "block";
         } else {
             document.getElementById("myBtn").style.display = "none";
@@ -25,3 +25,9 @@ $(document).ready(function (){
         $("html, body").animate({ scrollTop: 0 }, 'slow');
         return false;
     }
+
+
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
