@@ -5,6 +5,12 @@
        <title>Catch the Squares!</title>
         <style>
             
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
             html{
                 width: 100%;
                 height: 100%;
@@ -12,9 +18,16 @@
                 position: relative;
             }
             
-            #play{
-                width: 100%;
+            body{
                 height: 100%;
+            }
+            
+            #play{
+                width: 60%;
+                height: 100%;
+                margin: 0 auto;
+                background-color: #d3d3d3;
+                position: relative;
             }
             
             #coolDiv {
@@ -26,6 +39,14 @@
                 background: black;
                 border: 2px solid #333;
                 border-radius: 5px;
+                color: #fff;
+            }
+            
+            #mainDiv{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
             
             #letsPlay{
@@ -46,10 +67,6 @@
             <div id="coolDiv"></div>
         </div>
         
-        
-        
-        
-        
         <script src="jquery-3.2.1.min.js"></script>
         <script>
             
@@ -59,7 +76,9 @@
             var windowHeight = $(window).height();
             var divHeight = $('#coolDiv').height();
             var newPos = windowHeight - divHeight;
-            var flag = false;
+            var divSize;
+            var flag;
+            var sum = 1;
             
             function calcNewPos(heightLarge){
                 var newPosLarge = windowHeight - heightLarge;
@@ -69,25 +88,36 @@
             $(document).keypress(function(e){
                 if (e.which == 13){
                     $('#letsPlay').hide();
+                    $valDiv = $('<span/>').html(sum).css({
+                        position: 'absolute',
+                        left: '50%',
+                        top: '50%',
+                        transform: 'translate(-50%, -50%)'
+                    }).appendTo('#coolDiv');
                     makeDiv();    
                 }
             });
             
             function makeDiv(){
-                
-                var divSize = ((Math.random()*100) + 50).toFixed();
-                var posx = Math.floor((Math.random() * ($(document).width() - divSize))).toFixed();
-                var posy = Math.floor((Math.random() * ($(document).height() - divSize))).toFixed();
+                flag = false;
+                divSize  = ((Math.random()*50) + 20).toFixed();
+                var posx = Math.floor((Math.random() * ($('#play').width() - divSize))).toFixed();
+                var posy = Math.floor((Math.random() * ($('#play').height() - divSize))).toFixed();
                 
                 
                 let color = '#' + Math.round(0xffffff * Math.random()).toString(16);
-                $newdiv = $('<div/>').css({
-                    width: divSize+'px',
-                    height: divSize+'px',
-                    backgroundColor: color,
-//                    border: '1px solid #333',
-                    borderRadius: '3px'
-                });
+                while(color == "#d3d3d3"){
+                    color = '#' + Math.round(0xffffff * Math.random()).toString(16);
+                }
+                    $newdiv = $('<div/>').css({
+                        width: divSize+'px',
+                        height: divSize+'px',
+                        backgroundColor: color,
+                        borderRadius: '3px'
+                    });
+                
+              
+                
                 
                 var ra = Math.floor(Math.random() * 4);
                 
@@ -105,11 +135,7 @@
                             left: 0,
                             top: posy+'px',
                             display: 'none'
-                            }).appendTo('body').fadeIn(200).delay(1000).fadeOut(2000, function(){
-                                $(this).remove();
-                                flag = false;
-                                makeDiv();
-                            });
+                            }).appendTo('#play').fadeIn(200).delay('slow');
                             break;
                         case 1:
                             flag = true;
@@ -118,11 +144,7 @@
                             right: 0,
                             top: posy+'px',
                             display: 'none'
-                            }).appendTo('body').fadeIn(200).delay(1000).fadeOut(2000, function(){
-                                $(this).remove();
-                                flag = false;
-                                makeDiv();
-                            });
+                            }).appendTo('#play').fadeIn(200).delay('slow');
                             break;
                         case 2:
                             flag = true;
@@ -131,11 +153,7 @@
                             left: posx+'px',
                             top: 0,
                             display: 'none'
-                            }).appendTo('body').fadeIn(200).delay(1000).fadeOut(2000, function(){
-                                $(this).remove();
-                                flag = false;
-                                makeDiv();
-                            });
+                            }).appendTo('#play').fadeIn(200).delay('slow');
                             break;
                         case 3:
                             flag = true;
@@ -144,11 +162,7 @@
                             left: posx+'px',
                             bottom: 0,
                             display: 'none'
-                            }).appendTo('body').fadeIn(200).delay(1000).fadeOut(2000, function(){
-                                $(this).remove();
-                                flag = false;
-                                makeDiv();
-                            });
+                            }).appendTo('#play').fadeIn(200).delay('slow');
                             break;
                         default:
                             return;
@@ -159,9 +173,6 @@
                     return false;
                 
                 
-                console.log($newdiv.length);
-                console.log($newdiv.position().left, $newdiv.position().top);
-                
                 
             }
             
@@ -171,7 +182,7 @@
                 switch(e.which) {
                     case 37: // left
                         np = calcNewPos(thisDiv.height());
-                        $('#coolDiv').animate({right:np}, "slow",
+                        $('#coolDiv').animate({right:np}, 'fast',
                             function(){
                                 $('#coolDiv').css({
                                     left: 0,
@@ -179,64 +190,77 @@
                                 });
                         });
                         
-                        if(($newdiv.position().top === 0) && ($('#coolDiv').position().top === 0)){
+                        
+                        
+                        if(($newdiv.position().top === 0) && (thisDiv.position().top === 0)){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
                             makeDiv();
                             
                         }
-                        else if((($newdiv.position().top) + ($newdiv.height()) > 800) && ($('#coolDiv').position().top + thisDiv.height() > 800)){
+                        
+                        else if((($newdiv.offset().top + $newdiv.height()) >= $(window).height()) && ($('#coolDiv').offset().top + thisDiv.height() >= ($(window).height() - 5))){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
                             makeDiv();
                         }
                         
-                        console.log(thisDiv.height())
+                        console.log($valDiv.html());
                         
                         break;
 
                     case 38: // up
                         
                         np = calcNewPos(thisDiv.height());
-                        $('#coolDiv').animate({bottom:np}, "slow", function(){
+                        $('#coolDiv').animate({bottom:np}, "fast", function(){
                             $('#coolDiv').css({
                                 top: 0,
                                 bottom: 'auto'
                             });
                         });
-                        
-                        if(($newdiv.position().left + $newdiv.height() > 800) && $('#coolDiv').position().left > 0){
+
+                        if((($newdiv.offset().left + $newdiv.width()) >= $('#play').width()) && ((thisDiv.offset().left + thisDiv.width()) >= $('#play').width() ) ){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                            
                             makeDiv();
                         }
-                        else if(($newdiv.position().left === 0) && ($('#coolDiv').position().left == 0)){
+                        else if(($newdiv.position().left === 0) && (thisDiv.position().left == 0)){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                            
                             makeDiv();
                         }
                     
+                        console.log($newdiv.offset().left + $newdiv.width())
+                        console.log(thisDiv.offset().left + thisDiv.width())
+                        console.log($('#play').width())
+
                         break;
 
                     case 39: // right
                         np = calcNewPos(thisDiv.height());
-                        $('#coolDiv').animate({left:np}, "slow", 
+                        $('#coolDiv').animate({left:np}, "fast", 
                         function(){
                             $('#coolDiv').css({
                                 right: 0,
@@ -244,29 +268,36 @@
                             });
                         });
                         
-                        if(($newdiv.position().top === 0) && ($('#coolDiv').position().top === 0)){
+                        if(($newdiv.position().top === 0) && (thisDiv.position().top === 0)){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                        
                             makeDiv();
                         }
-                        else if(($newdiv.position().top + $newdiv.height() > 800) && ($('#coolDiv').position().top + thisDiv.height() > 800)){
-                                $newdiv.remove();
+                        
+                        else if((($newdiv.offset().top + $newdiv.height()) >= windowHeight) && (thisDiv.offset().top + thisDiv.height()) >= (windowHeight - 5)){
+                            $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                            
                             makeDiv();
                         }
+                        
+                        console.log(thisDiv.offset().top + thisDiv.height())
                         break;
 
                     case 40: // down     
                        np = calcNewPos(thisDiv.height());
-                       $('#coolDiv').animate({top:np}, "slow", function(){
+                       $('#coolDiv').animate({top:np}, "fast", function(){
                            $('#coolDiv').css({
                               bottom: 0,
                                top: 'auto'
@@ -276,20 +307,25 @@
                         if(($newdiv.position().left === 0) && (thisDiv.position().left === 0)){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                            
                             makeDiv();
                         }
-                        else if(($newdiv.position().left + $newdiv.height() > 800) && (thisDiv.position().left + thisDiv.height() > 800)){
+                        else if((($newdiv.offset().left + $newdiv.width()) >= $('#play').width()) && ((thisDiv.offset().left + thisDiv.width()) >= $('#play').width())){
                             $newdiv.remove();
                             $('#coolDiv').css({
-                                width: '+=20px',
-                                height: '+=20px'
+                                width: '+=' + (divSize/3 + 'px'),
+                                height: '+=' + (divSize/3 + 'px')
                             });
+                            $($valDiv).html(++sum);
                             flag = false;
+                            
                             makeDiv();
+                                
                         }
                         break;
 
