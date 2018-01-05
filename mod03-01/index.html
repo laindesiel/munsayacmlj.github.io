@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Sample JS Day 2</title>
+        
+        <style>
+            * {
+                font-family: monospace;
+            }
+            
+            #star{
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <h1 id="display">Sample JS Day 2</h1>
+        
+        <p>Enter a number in the input box, and evaluate if the number is a multiple of 3 and 5.
+        If not, check if it's a multiple of 3, or a multiple of 5.</p>
+        
+        <input type="number" value="" id="input1">
+        <button id="btn">CHECK ME!</button><br><br>
+        
+        <div>
+           <p>
+                <input type="number" name="weight" id="in1" placeholder="Weight">
+                <select name="" id="wt">
+                    <option value="" selected>kg</option>
+                    <option value="">lbs</option>
+                </select>
+            </p>
+        </div>
+        
+        <div>
+            <p>
+                <input type="number" name="height" id="in2" placeholder="Height">
+                <select name="" id="ht">
+                    <option value="" selected>m</option>
+                    <option value="">in</option>
+                </select>
+            </p>
+        </div>
+        <button id="btn1">Check BMI</button>
+        <p id="displayBMI">&nbsp;</p>
+                        
+        <div id="color">
+            <ul id="list">
+            
+            </ul>
+        </div>
+        
+        <div id="star">
+            &nbsp;
+        </div>
+        
+        <p>
+            <input type="number" id="loopid">
+            <button id="loopbtn">Looperino!</button>
+        </p>
+        
+        <script>
+            document.getElementById('btn').onclick = function(){
+                var x = document.getElementById('input1');
+                
+                if((x.value % 3 === 0) && (x.value % 5 === 0)){
+                    if(x.value.length == 0)
+                        document.getElementById('display').innerHTML = "0 is a multiple of every integer (expect zero itself)";
+                    else if(x.value % 2 === 0)
+                        document.getElementById('display').innerHTML = x.value + " is an even multiple of 3 and 5";
+                    else
+                        document.getElementById('display').innerHTML = x.value + " is an odd multiple of 3 and 5";
+                }
+                else if(x.value % 3 === 0){
+                    if(x.value % 2 === 0)
+                        document.getElementById('display').innerHTML = x.value + " is an even multiple of 3";
+                    else
+                        document.getElementById('display').innerHTML = x.value + " is an odd multiple of 3";
+                }
+                else if(x.value % 5 === 0){
+                    if(x.value % 2 === 0)
+                        document.getElementById('display').innerHTML = x.value + " is an even multiple of 5";
+                    else
+                        document.getElementById('display').innerHTML = x.value + " is an odd multiple of 5";
+                }
+                else
+                    document.getElementById('display').innerHTML = x.value + " is NOT a multiple of 3 or 5";
+            }
+            
+            document.getElementById('btn1').onclick = function(){
+                var w = parseFloat(document.getElementById('in1').value),
+                    h = parseFloat(document.getElementById('in2').value),
+                    bmi,
+                    bmidisp = document.getElementById('displayBMI');
+                const i = 0.0254;
+                const p = 2.2046226218;
+                
+                if((document.getElementById('wt').options.selectedIndex == 0) && (document.getElementById('ht').options.selectedIndex == 1)){
+                    
+                    h *= i;                 
+                }
+                else if((document.getElementById('wt').options.selectedIndex == 1) && (document.getElementById('ht').options.selectedIndex == 0)){
+                    
+                    w /= p; 
+                    
+                }
+                else if((document.getElementById('wt').options.selectedIndex == 1) && (document.getElementById('ht').options.selectedIndex == 1)){
+                    
+                    w /= p;
+                    h *= i;
+                }
+                    bmi = w / (Math.pow(h,2));
+                    if(bmi < 18.5)
+                         bmidisp.innerHTML = bmi + "BMI is Underweight";
+                    else if(bmi <= 24.9)
+                        bmidisp.innerHTML = bmi + "BMI is Normal Weight";
+                    else if(bmi <= 29.9)
+                        bmidisp.innerHTML = bmi + "BMI is Overweight";
+                    else
+                        bmidisp.innerHTML = bmi + "BMI is Obesity"; 
+            }
+            
+            
+            var x = 0;
+            var sumOdd = 0,
+                sumEven = 0;
+            while(x <= 50)
+            {
+//                if((x % 3 == 0) & (x % 5 == 0)){
+//                    console.log(x + " is a multiple or 3 and 5");
+//                }
+//                else if(x % 3 == 0){
+//                    console.log(x + " is a multiple of 3")
+//                }
+//                else if(x % 5 == 0){
+//                    console.log(x + " is a multiple of 5")
+//                }
+//                else
+//                    console.log(x + " is not a multiple of 3 or 5")
+                if(x % 2 == 0){
+                    sumEven += x;
+                }
+                else{
+                    sumOdd += x;
+                }
+                x++;
+            }
+//            alert("sum of even: " + sumEven + "\n" + "sum of odd: " + sumOdd);
+            
+            var colors = [
+                "Red",
+                "Orange",
+                "Yellow",
+                "Green",
+                "Blue",
+                "Indigo",
+                "Violet"
+            ];
+            
+            
+            for(let i = colors.length-1; i>=0; i--){
+                console.log(colors[i]);
+                document.getElementById('list').innerHTML += "<li>"+colors[i]+"</li>"; 
+            }
+            
+            
+            document.getElementById('loopbtn').onclick = function(){
+                let val = document.getElementById('loopid').value;
+                document.getElementById('star').innerHTML = "";
+                for(let j = 0; j<val; j++){
+                    for(let k=0; k<val; k++){
+                        document.getElementById('star').innerHTML += " *";
+                    }
+                    document.getElementById('star').innerHTML += "<br>";
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>

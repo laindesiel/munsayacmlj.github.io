@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        
+        <style>
+            .row1 button, .row2 button, .row3 button, .row4 button
+            {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .row5 button, .row6 button{
+                width: 100px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+            #viewer{
+                margin-bottom: 10px;
+                height: 20px;
+                width: 207px;
+            }
+        </style>
+    </head>
+    
+    <body>
+<!--
+        <h1 id="heading">Sample for JS</h1>
+        <h2 id="head2">HERRO WORRD</h2>
+        
+        <p><button id="btn2" onclick="changeHTML()">Change H2</button></p>
+        
+        
+        <input type="number" id="input1"><br>
+        <input type="number" id="input2">
+        <button id="btn1" onclick="getVal(this.innerHTML)">clicky</button>
+        <button id="btn2" onclick="getVal(this.id)">clicky</button>
+        <button id="btn3" onclick="getVal(this.id)">clicky</button>
+        <br><br>
+-->
+       
+       <select name="month" id="month" onchange="showMonth()">
+          <option disabled selected></option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+           <option value="11">11</option>
+           <option value="12">12</option>
+       </select>
+       
+       <script>
+            function showMonth(){
+              let num = document.getElementById('month').value;
+              var mon = ["January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December"];
+             document.getElementById('displayMonth').innerHTML = mon[num-1];
+            } 
+       </script>
+       
+       <h2 id="displayMonth">&nbsp;</h2>
+        <p id="display">&nbsp;</p>
+      
+           <input type="text" id="viewer">
+            <div class="row1" style="margin-bottom: 10px;">
+                <button class = "num" id="7" onclick="getNum(this.innerHTML, this.id)">7</button>
+                <button class = "num" id='8' onclick="getNum(this.innerHTML, this.id)">8</button>
+                <button class = "num" id="9" onclick="getNum(this.innerHTML, this.id)">9</button>
+                <button onclick="getNum(this.innerHTML)">/</button>
+            </div>
+            <div class="row2" style="margin-bottom: 10px;">
+                <button class = "num" id="4" onclick="getNum(this.innerHTML, this.id)">4</button>
+                <button class = "num" id='5' onclick="getNum(this.innerHTML, this.id)">5</button>
+                <button class = "num" id="6" onclick="getNum(this.innerHTML, this.id)">6</button>
+                <button class="num" id="*" onclick="getNum(this.innerHTML, this.id)">*</button>
+            </div>
+            <div class="row3" style="margin-bottom: 10px;">
+                <button class = "num" id="1" onclick="getNum(this.innerHTML, this.id)">1</button>
+                <button class = "num" id='2' onclick="getNum(this.innerHTML, this.id)">2</button>
+                <button class = "num" id="3" onclick="getNum(this.innerHTML, this.id)">3</button>
+                <button id="-" class="num" onclick="getNum(this.innerHTML, this.id)">-</button>
+            </div>
+            <div class="row4" style="margin-bottom: 10px;">
+                <button class = "num" id="0" onclick="getNum(this.innerHTML, this.id)">0</button>
+                <button id='.' class="num" onclick="getNum(this.innerHTML, this.id)">.</button>
+                <button id="equals" class="num" onclick="compute()">=</button>
+                <button id="+" class="num" onclick="getNum(this.innerHTML, this.id)">+</button>   
+            </div>
+            
+            <div class="row5">
+                <button class="num" onclick="clearvalue()">CLEAR</button>
+                <button id="lt5" class="num" onclick="lessThanFive()">&lt;=5</button>
+            </div>
+            
+            <div class="row6">
+                <button onclick="oddOrEven()">Odd/Even</button>
+            </div>
+
+        
+        
+        
+        <script src="js/main.js" type="text/javascript"></script>
+        
+        <script>          
+            
+            function getNum(val,btn){ 
+                document.getElementById('viewer').value += val;         
+                document.getElementById(btn).style.backgroundColor = '#a9a9a9';   
+            }
+            
+            function oddOrEven(){
+                let num1 = parseInt(document.getElementById('viewer').value);
+                if(isNaN(num1)){
+                    document.getElementById('display').innerHTML =  "not a number";
+                }
+                else{
+                    if(num1 % 2 == 0){
+                    document.getElementById('display').innerHTML = num1 + " is even";
+                    }
+                    else{
+                        document.getElementById('display').innerHTML = num1 + " is odd";
+                    }
+                }
+                
+            }
+            
+           function lessThanFive(){
+               let num = document.getElementById('viewer');
+               
+               if(num.value.length == 0){
+                   document.getElementById('display').innerHTML = "not a number";         
+               }
+               else if(typeof(num.value) == 'number'){
+                       
+                }
+               else{
+                   try{
+                      if(parseInt(num.value) < 5){
+                       document.getElementById('display').innerHTML = num + " is less than 5";
+                       }
+                       else if (parseInt(num.value === 5)){
+                           document.getElementById('display').innerHTML = num.value + " is equal to 5";
+                       }
+                       else{
+                           document.getElementById('display').innerHTML = num.value + " is greater to 5";
+                       } 
+                   }
+                   catch(e){
+                       document.getElementById('display').innerHTML = e.message;
+                        document.getElementById('viewer').value = " ";
+                   }
+               }      
+               defaultColor();  
+           }
+            
+            
+            
+            function compute(){
+                try{
+                    document.getElementById('display').innerHTML = eval(document.getElementById('viewer').value);
+                    
+                }
+                catch(e){
+                    document.getElementById('display').innerHTML = e.message;
+                    document.getElementById('viewer').value = " ";
+                }
+                
+                defaultColor();
+            }
+            
+            function clearvalue(){
+                document.getElementById('display').innerHTML = "&nbsp;";
+                document.getElementById('viewer').value = " ";
+                defaultColor();
+            }
+            
+            function defaultColor(){
+                let x = document.getElementsByClassName('num');
+                for(let i = 0; i<=x.length; i++){
+                    x[i].style.backgroundColor = 'buttonface';
+                }
+            }
+            
+            function getVal(input){
+                alert(input);
+//                let in1 = document.getElementById('input1').value;
+//                let in2 = document.getElementById('input2').value;
+//                document.getElementById('heading').innerHTML = (parseInt(in1) + parseInt(in2));
+            }
+        </script>
+    </body>
+</html>
